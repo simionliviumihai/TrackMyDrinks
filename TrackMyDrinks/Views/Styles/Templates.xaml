@@ -1,0 +1,36 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:TrackMyDrinks.ViewModels"
+    xmlns:utils="using:TrackMyDrinks.Views.Utils"
+    xmlns:controls="using:TrackMyDrinks.Views.Controls">
+
+    <DataTemplate x:Name="home">
+        <controls:Home/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="favorites">
+        <controls:Favorites/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="history">
+        <controls:History/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="settings">
+        <controls:Settings/>
+    </DataTemplate>
+    
+    <DataTemplate x:Name="details">
+        <controls:CategoryDetails/>
+    </DataTemplate>
+
+    <utils:MainPageTemplateSelector
+        x:Key="mainPageTemplateSelector" 
+        x:Name="mainPageTemplateSelector"
+        Home="{StaticResource home}"
+        Favorites="{StaticResource favorites}"
+        History="{StaticResource history}"
+        Settings="{StaticResource settings}"
+        Details="{StaticResource details}"/>
+</ResourceDictionary>

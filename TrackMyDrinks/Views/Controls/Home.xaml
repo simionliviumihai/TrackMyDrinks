@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="TrackMyDrinks.Views.Controls.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TrackMyDrinks.Views.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="700"
+    d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/HomeStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid MinHeight="550">
+        <ListView ItemsSource="{x:Bind ViewModel.Items}" SelectedIndex="{x:Bind ViewModel.SelectedItemIndex, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:LightCategory/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</UserControl>
